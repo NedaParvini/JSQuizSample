@@ -30,17 +30,12 @@ h2 {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* a {
-    color: #d461c5;
-    font-family: 'Archivo', sans-serif;
-} */
-
 a:hover {
     color: #bd82b8;
     font-family: 'Archivo', sans-serif;
 }
 #start-quiz-button{
-  background-color: #450a46;
+  background-color: #5b1b5c;
 }
 .btn:hover {
     outline: none !important;
