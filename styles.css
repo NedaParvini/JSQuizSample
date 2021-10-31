@@ -110,4 +110,7 @@ p {
   .btn {
     font-size: 0.7rem;
   }
+  h1 {
+    font-size: 18px;
+  }
 }
