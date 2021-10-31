@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
+   
 }
 body h2 {
     font-family: sans-serif;
@@ -11,6 +12,17 @@ body h2 {
 body h2 p{
     text-align: justify;
 }  
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #353534;
+  padding: 10px;
+  }
+  .center2obj {
+    width: 70%;
+    margin: auto;
+    padding: 5px;
+    }
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -34,34 +46,36 @@ a:hover {
     color: #bd82b8;
     font-family: 'Archivo', sans-serif;
 }
-#start-quiz-button{
-  background-color: #450a46;
+#maindiv{
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+.btn{
+  color:white;
+  background-color: rgb(71, 10, 56);
 }
 .btn:hover {
     outline: none !important;
     box-shadow: none !important;
     background-color: #d5a6d6;
 }
-.btn-dark:focus{
-  box-shadow: 0px 0px white !important;
-}
-
-#finalScore {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
 
 span {
-    font-family: 'Archivo', sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
+span #finalScore {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
 p {
-    font-family: 'Archivo', sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #questionTitle {
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #answerCheck {
