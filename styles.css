@@ -3,6 +3,13 @@ body {
   background-color: #f9fbfd;
    
 }
+body h1 {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-display:center ;
+
+}
 body h2 {
     font-family: sans-serif;
     font-size: medium;
@@ -97,5 +104,10 @@ p {
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+}
+@media (max-width: 320px) {
+  .btn {
+    font-size: 0.7rem;
   }
 }
