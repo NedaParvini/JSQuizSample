@@ -1,5 +1,5 @@
 
- // Define a set of questions
+ // Set of questions
  const questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -29,14 +29,12 @@
     
 ];
 
-// grab references to elements
+// Grab references to elements
 var timer = document.getElementById("timer");
 var timeLeft = document.getElementById("timeLeft");
 var timesUp = document.getElementById("timesUp");
-
 var startDiv = document.getElementById("start");
 var startQuizBtn = document.getElementById("start-quiz-button");
-
 var questionDiv = document.getElementById("questionDiv");
 var questionTitle = document.getElementById("questionTitle");
 var choiceA = document.getElementById("btn0");
@@ -44,31 +42,26 @@ var choiceB = document.getElementById("btn1");
 var choiceC = document.getElementById("btn2");
 var choiceD = document.getElementById("btn3");
 var answerCheck = document.getElementById("answerCheck");
-
 var summary = document.getElementById("summary");
 var submitInitialBtn = document.getElementById("submitInitialBtn");
 var initialInput = document.getElementById("initialInput");
 var everything = document.getElementById("everything");
-
 var highScoreSection = document.getElementById("highScoreSection");
 var finalScore = document.getElementById("finalScore");
-
 var goBackBtn = document.getElementById("goBackBtn");
 var clearHighScoreBtn = document.getElementById("clearHighScoreBtn"); 
 var viewHighScore = document.getElementById("viewHighScore");
 var listOfHighScores = document.getElementById("listOfHighScores");
 
-// define other variables
+// Define other variables
 var correctAns = 0;
 var questionNum = 0;
 var scoreResult;
 var questionIndex = 0;
 
-/**
- * FUNCTIONS
- */
+//Functions//
 
-// WHEN I click the start button, timer starts
+// Timer starts
 var totalTime = 101;
 function newQuiz() {
     questionIndex = 0;
@@ -80,7 +73,6 @@ function newQuiz() {
     questionDiv.style.display = "block";
     timer.style.display = "block";
     timesUp.style.display = "none";
-
     var startTimer = setInterval(function() {
         totalTime--;
         timeLeft.textContent = totalTime;
@@ -95,7 +87,6 @@ function newQuiz() {
     showQuiz();
 };
 
-// then presented with questions and choices
 function showQuiz() {
     nextQuestion();
 }
@@ -137,14 +128,11 @@ function checkAnswer(answer) {
 }
 
 function chooseA() { checkAnswer(0); }
-
 function chooseB() { checkAnswer(1); }
-
 function chooseC() { checkAnswer(2); }
-
 function chooseD() { checkAnswer(3); }
 
-// when all questions are answered or timer reaches 0, game over
+// Game Over 
 function gameOver() {
     summary.style.display = "block";
     questionDiv.style.display = "none";
@@ -156,12 +144,11 @@ function gameOver() {
     finalScore.textContent = correctAns;
     correctAns = 0;
 }
-
-// enter initial and store highscore in local storage
+// Enter initial and store highscore in local storage
 function storeHighScores(event) {
     event.preventDefault();
 
-    // stop function is initial is blank
+    // Stop function is initial is blank
     if (initialInput.value === "") {
         alert("Please enter your initials!");
         return;
@@ -173,7 +160,7 @@ function storeHighScores(event) {
     summary.style.display = "none";
     highScoreSection.style.display = "block";   
 
-    // store scores into local storage
+    // Store scores into local storage
     var savedHighScores = localStorage.getItem("high scores");
     var scoresArray;
 
@@ -187,7 +174,6 @@ function storeHighScores(event) {
         initials: initialInput.value,
         score: finalScore.textContent
     };
-
     console.log(userScore);
     scoresArray.push(userScore);
 
@@ -227,29 +213,23 @@ function showHighScores() {
     }
 }
 
-/**
- * ADD EVENT LISTENERS
- */
+//Event listener//
 
 startQuizBtn.addEventListener("click", newQuiz);
 choiceA.addEventListener("click", chooseA);
 choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
 choiceD.addEventListener("click", chooseD);
-
 submitInitialBtn.addEventListener("click", function(event){ 
     storeHighScores(event);
 });
-
 viewHighScore.addEventListener("click", function(event) { 
     showHighScores(event);
 });
-
 goBackBtn.addEventListener("click", function() {
     startDiv.style.display = "block";
     highScoreSection.style.display = "none";
 });
-
 clearHighScoreBtn.addEventListener("click", function(){
     window.localStorage.removeItem("high scores");
     listOfHighScores.innerHTML = "High Scores Cleared!";
